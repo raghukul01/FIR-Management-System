@@ -8,7 +8,7 @@ echo $username."\n<br />";
 echo $password."<br />";
 //need to make sure they are correct if not redirect back to login.
 $URL = 'localhost';
-$DATABASE = 'academics';
+$DATABASE = 'firdata';
 
 $_SESSION['username'] = $username;
 $_SESSION['url'] = $URL;
