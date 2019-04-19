@@ -34,6 +34,8 @@ if(isset($_SESSION['query'])){
 else if(isset($_POST['logout'])){
     session_destroy();
     header('Location:index.php');
+} else {
+    
 }
 ?>
 <!DOCTYPE>
@@ -55,7 +57,7 @@ function goBack()
 <div id='middle' style='width: auto;height: 1000px; '>
     <div id='center' style='width: 1000px;margin-left: auto;margin-right: auto;'>
         <hr />
-        <div id='l-middle' style='float: left; text-align:center;'>
+        <div id='l-middle' style='float: right; text-align:center;'>
             <b>Welcome back</b><br />
             <?php echo $_SESSION['username']; ?><br />
             <form action="results.php" method="post">
@@ -64,6 +66,7 @@ function goBack()
         </div><!--END OF L-MIDDLE-->
         <div id='inner_center' style='width:500px;margin-left: auto; margin-right:auto;'>
             <div id='sql_results'>
+                <h2>Insert</h2>
                 <?php echo $results_string?>
                 <a href='sql.php'> Back to SQL </a>
             </div><!--END OF SQL RESULTS-->

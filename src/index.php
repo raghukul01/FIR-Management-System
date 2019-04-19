@@ -4,6 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="style.css" rel="stylesheet">
         <title>
             FIR Management
         </title>
