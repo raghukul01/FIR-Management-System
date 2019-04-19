@@ -36,6 +36,7 @@ else if(isset($_POST['logout'])){
     header('Location:index.php');
 }
 ?>
+
 <!DOCTYPE>
 <html>
 <head>
@@ -64,7 +65,7 @@ function goBack()
         </div><!--END OF L-MIDDLE-->
         <div id='inner_center' style='width:500px;margin-left: auto; margin-right:auto;'>
             <div id='sql_results'>
-                <?php echo $results_string?>
+                <?php echo $results_string ?>
                 <a href='sql.php'> Back to SQL </a>
             </div><!--END OF SQL RESULTS-->
         </div><!--END OF INNER CENTER-->

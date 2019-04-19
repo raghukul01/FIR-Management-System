@@ -12,7 +12,7 @@ redirect('results.php');
     session_destroy();
     header('Location:index.php');
 } else if(isset($_POST['table'])) {
-    $_SESSION['query'] = 'select * from '.$_POST['name'];
+    // $_SESSION['query'] = 'select * from '.$_POST['name'];
     $_SESSION['name'] = $_POST['name'];
     // echo $_POST['name'];
     redirect('table.php');

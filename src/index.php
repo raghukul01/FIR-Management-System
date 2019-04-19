@@ -26,6 +26,7 @@ session_start();
                         <tr>
                             <td><label for="password">Password: </label></td>
                             <td><input type="password" id="password" name="password" style="width: 150px;"/></td>
+                        </tr>
                     </table>
                     <input type="submit" />
                 </form>
