@@ -7,10 +7,11 @@ $database->connect($_SESSION['url'],$_SESSION['username'],$_SESSION['password'],
 $results_string = '';
 
 if(isset($_SESSION['query'])) {
-    echo $_SESSION['query'];
     $_SESSION['results'] = $database->run_query($_SESSION['query']);
     if(is_string($_SESSION['results'])){
-        $results_string .= "<h2 style='color:red;'>".$_SESSION['results']."</h2>";
+        if(!empty($_SESSION['results'])) {
+            $results_string .= "<h2 style='color:red;'> Please give correct input values for insert/delete query. </h2>";
+        }
     }
     unset($_SESSION['query']);
 }
