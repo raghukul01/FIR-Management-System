@@ -75,20 +75,6 @@ Check (prisoner_id > 0),
 Check (prison_id > 0)
 );
 
-Create table prisoner_charge_sheet_no
-(
-prisoner_id integer not null,
-charge_sheet_no integer not null,
-Primary Key (prisoner_id, charge_sheet_no),
-Foreign Key (prisoner_id) references prisoner (prisoner_id),
-Check (prisoner_id > 0),
-Check (charge_sheet_no > 0)
-);
-
-
-
-
-
 CREATE TABLE SECTIONS 
 (
         Section_ID INTEGER not null,
@@ -100,6 +86,7 @@ CREATE TABLE SECTIONS
         check (Prison_Time >=0),
         check (Fine >= 0)
 );
+
 
 CREATE TABLE FIR
 (
@@ -175,6 +162,7 @@ FOREIGN KEY (Accused_ID) REFERENCES Accused(Accused_ID),
 FOREIGN KEY (FIR_ID) REFERENCES FIR(FIR_ID),
 PRIMARY KEY(FIR_ID, Accused_ID)
 );
+
 CREATE TABLE CASE_FIR
 (
 CASE_ID integer not null,
@@ -183,7 +171,6 @@ FOREIGN KEY (CASE_ID) REFERENCES Cases (Case_ID),
 FOREIGN KEY (FIR_ID) REFERENCES FIR(FIR_ID),
 PRIMARY KEY(FIR_ID, CASE_ID)
 );
-
 
 CREATE TABLE Charge_Sheet
 (
@@ -200,11 +187,15 @@ CREATE TABLE Charge_Sheet_Sections
         PRIMARY KEY (Charge_Sheet_No, Section_ID)
 );
 
-
-
-
-
-
+Create table Accused_charge_sheet_no
+(
+Accused_id integer not null,
+charge_sheet_no integer not null,
+Primary Key (Accused_id, charge_sheet_no),
+Foreign Key (Accused_id) references Accused (Accused_ID),
+FOREIGN KEY (charge_sheet_No) REFERENCES Charge_Sheet(Charge_Sheet_No),
+Check (charge_sheet_no > 0)
+);
 
 
 INSERT INTO Person Values(10001,'Abhinav Shukla','Vibhor',20,'Kalyanpur,Kanpur',2,1);
@@ -341,15 +332,14 @@ INSERT into Victims_FIR Values(10009, 4);
 INSERT into Victims_FIR Values(10017, 5);
 INSERT into Victims_FIR Values(10004, 5);
 
+INSERT into Charge_Sheet Values(1, 'Murder, Rape', "2019-02-12");
+INSERT into Charge_Sheet Values(2, 'Theft', "2019-03-14");
+INSERT into Charge_Sheet Values(3, 'Caste Atrocities', "2019-04-20");
 
+INSERT into Charge_Sheet_Sections Values(3, 201);
+INSERT into Charge_Sheet_Sections Values(1, 311);
+INSERT into Charge_Sheet_Sections Values(2, 431);
 
-
-
-
-
-
-
-
-
-
-
+INSERT into Accused_charge_sheet_no Values(10022, 3);
+INSERT into Accused_charge_sheet_no Values(10025, 2);
+INSERT into Accused_charge_sheet_no Values(10023, 1);
