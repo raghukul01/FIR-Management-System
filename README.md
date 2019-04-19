@@ -9,3 +9,7 @@
 |  Raghukul Raman  |  160538 | raghukul@iitk.ac.in |
 | Shubhojyoti Nath |  150708 |  shubhoj@iitk.ac.in |
 |   Vibhor Porwal  |  160778 |  vibhorp@iitk.ac.in |
+
+To run the system - 
+1. $ cd src
+2. $ php -S localhost:8080
